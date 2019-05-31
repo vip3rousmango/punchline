@@ -1,23 +1,21 @@
 const {Command, flags} = require('@oclif/command')
 const axios = require('axios')
+axios.defaults.headers.get['Accept'] = 'application/json'
+axios.defaults.headers.get['User-Agent'] = 'Punchline (https://github.com/vip3rousmango/punchline)'
 
 class PunchlineCommand extends Command {
   async run() {
     // const {flags} = this.parse(PunchlineCommand)
     // const joke = 'j/' + flags.joke || 'R7UfaahVfFd'
     // const search = 'search?term=' + flags.search || 'poop'
-    // let returnPunchline
 
     // Simple Get Request
     try {
-      const response = await axios.get('https://icanhazdadjoke.com/',
-      responseType: 'stream',
-      )
-      this.log(response)
+      const response = await axios.get('https://icanhazdadjoke.com/')
+      this.log(response.data.joke)
     } catch (error) {
-      console.error(error)
+      console.error('There was an error: ' + error)
     }
-    // this.log(returnPunchline)
   }
 }
 

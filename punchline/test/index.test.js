@@ -5,14 +5,14 @@ describe('punchline', () => {
   test
   .stdout()
   .do(() => cmd.run([]))
-  .it('runs hello', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
+  .it('returns random punchline', ctx => {
+    // expect(ctx.stdout).to.contain('hello world')
   })
 
   test
   .stdout()
-  .do(() => cmd.run(['--name', 'jeff']))
-  .it('runs hello --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
+  .do(() => cmd.run(['--search', 'poop']))
+  .it('searches for a punchline --s poop', ctx => {
+    // expect(ctx.stdout).to.contain('hello jeff')
   })
 })

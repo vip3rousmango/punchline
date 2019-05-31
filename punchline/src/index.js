@@ -1,27 +1,41 @@
 const {Command, flags} = require('@oclif/command')
 const axios = require('axios')
+// eslint-disable-next-line dot-notation
 axios.defaults.headers.get['Accept'] = 'application/json'
 axios.defaults.headers.get['User-Agent'] = 'Punchline (https://github.com/vip3rousmango/punchline)'
+// Details
 const url = 'https://icanhazdadjoke.com/'
+let usedSearch = false
 class PunchlineCommand extends Command {
   async run() {
     const {flags} = this.parse(PunchlineCommand)
-    let searchURL = 'search?term='
+    let searchURLparams = 'search?term='
     let searchTerm = flags.search || ''
-
+    // Quick check to see if search was actually used?
     if (searchTerm.length > 0) {
-      searchURL = url + searchURL + searchTerm
+      searchURLparams = url + searchURLparams + searchTerm
+      usedSearch = true
     } else {
-      searchURL = url
+      searchURLparams = url
     }
-    // Simple Get Request
+    // Axios Get Request
     try {
-      const response = await axios.get(searchURL)
-      this.log(response.data.joke)
-      this.log('---')
-      this.log(`You searched for: ${searchTerm}`)
+      const response = await axios.get(searchURLparams)
+      let jokeSearchResult = response.data
+      // USED SEARCH?
+      if (usedSearch) {
+        // TODO: Fix Search Results - returned JSON Object
+        jokeSearchResult.results.forEach(jokeresult => {
+          //
+        })
+        this.log('---')
+        this.log(`You searched for: ${searchTerm}`)
+      } else {
+        // RANDO PUNCHLINE
+        this.log(response.data.joke)
+      }
     } catch (error) {
-      console.error('There was an error: ' + error)
+      this.log('There was an error: ' + error)
     }
   }
 }

@@ -2,6 +2,7 @@ punchline
 =========
 
 A quick little CLI that returns... a punchline.
+Uses the [ICanHazDadJoke.com](https://icanhazdadjoke.com/) API &lt;3
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/punchline.svg)](https://npmjs.org/package/punchline)

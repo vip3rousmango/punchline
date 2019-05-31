@@ -1,0 +1,28 @@
+{
+  "name": "punchline",
+  "version": "0.0.1",
+  "description": "A quick little CLI that returns a 'Punchline'.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vip3rousmango/punchline.git"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "jokes",
+    "oclif"
+  ],
+  "author": "Al Romano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vip3rousmango/punchline/issues"
+  },
+  "homepage": "https://github.com/vip3rousmango/punchline#readme",
+  "dependencies": {
+    "oclif": "^1.13.2"
+  }
+}

@@ -12,5 +12,8 @@ Uses the [ICanHazDadJoke.com](https://icanhazdadjoke.com/) API &lt;3
 <!-- toc -->
 # Usage
 <!-- usage -->
+`$ npm install -g @vip3rousmango/punchline`
+`$ punchline`
 # Commands
 <!-- commands -->
+`--search, -s` :: Lets you search for a topic and returns a random related punchline.

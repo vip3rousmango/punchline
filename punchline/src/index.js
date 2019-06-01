@@ -24,7 +24,9 @@ class PunchlineCommand extends Command {
       let jokeSearchResult = response.data
       // USED SEARCH?
       if (usedSearch) {
+        // eslint-disable-next-line no-warning-comments
         // TODO: Fix Search Results - returned JSON Object
+        // eslint-disable-next-line no-unused-vars
         jokeSearchResult.results.forEach(jokeresult => {
           //
         })
@@ -57,7 +59,7 @@ PunchlineCommand.flags = {
   }),
   search: flags.string({
     char: 's',
-    description: 'enter a search term. Ex, poop',
+    description: 'enter a search term. Ex, pizza',
   }),
 }
 

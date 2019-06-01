@@ -1,3 +1,6 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable quote-props */
 /* eslint-disable camelcase */
 const {expect, test} = require('@oclif/test')
 const cmd = require('..')
@@ -22,22 +25,22 @@ describe('punchline', () => {
   .nock('https://icanhazdadjoke.com', api => api
   .get('/search?term=pizza')
   .reply(200, {
-    results: [
+    "results": [
       {
-        id: 'haMJRfF6hFd',
-        joke: 'How do you fix a broken pizza? With tomato paste.',
+        "id": "haMJRfF6hFd",
+        "joke": "How do you fix a broken pizza? With tomato paste."
       },
       {
-        id: 'xc21Lmbxcib',
-        joke: 'How did the hipster burn the roof of his mouth? He ate the pizza before it was cool.',
+        "id": "xc21Lmbxcib",
+        "joke": "How did the hipster burn the roof of his mouth? He ate the pizza before it was cool."
       },
       {
-        id: 'rc2E6EdiNe',
-        joke: 'Want to hear my pizza joke? Never mind, it\'s too cheesy.',
+        "id": "rc2E6EdiNe",
+        "joke": "Want to hear my pizza joke? Never mind, it's too cheesy."
       },
       {
-        id: '51DAA5Tfaxc',
-        joke: 'What did Romans use to cut pizza before the rolling cutter was invented? Lil Caesars',
+        "id": "51DAA5Tfaxc",
+        "joke": "What did Romans use to cut pizza before the rolling cutter was invented? Lil Caesars"
       },
     ],
   })
@@ -49,6 +52,6 @@ describe('punchline', () => {
   //   expect(response.results[0])
   // })
   .it('searches for a relevant punchline using: -s=pizza', ctx => {
-    expect(ctx.stdout).to.equal('---\nYou searched for: pizza\n')
+    expect(ctx.stdout).to.equal('How do you fix a broken pizza? With tomato paste.\n---\nHow did the hipster burn the roof of his mouth? He ate the pizza before it was cool.\n---\nWant to hear my pizza joke? Never mind, it\'s too cheesy.\n---\nWhat did Romans use to cut pizza before the rolling cutter was invented? Lil Caesars\n---\nYou searched for: pizza\n')
   })
 })

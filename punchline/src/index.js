@@ -21,16 +21,14 @@ class PunchlineCommand extends Command {
     // Axios Get Request
     try {
       const response = await axios.get(searchURLparams)
-      let jokeSearchResult = response.data
+      let jokeSearchResult = JSON.stringify(response.data)
       // USED SEARCH?
       if (usedSearch) {
-        // eslint-disable-next-line no-warning-comments
-        // TODO: Fix Search Results - returned JSON Object
-        // eslint-disable-next-line no-unused-vars
-        jokeSearchResult.results.forEach(jokeresult => {
-          //
-        })
-        this.log('---')
+        jokeSearchResult = response.data.results
+        for (var i = 0; i < jokeSearchResult.length; i++) {
+          this.log(jokeSearchResult[i].joke)
+          this.log('---')
+        }
         this.log(`You searched for: ${searchTerm}`)
       } else {
         // RANDO PUNCHLINE

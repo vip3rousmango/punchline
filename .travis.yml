@@ -1,1 +1,11 @@
-before_script: cd punchline
+language: node_js
+node_js:
+  - node
+
+cache: npm
+
+script:
+  - cd punchline
+  - .\bin\run --version
+  - .\bin\run --help
+  - npm run test

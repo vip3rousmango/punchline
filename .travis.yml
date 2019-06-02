@@ -6,6 +6,7 @@ cache: npm
 
 script:
   - cd punchline
+  - npm install
   - .\bin\run --version
   - .\bin\run --help
   - npm run test

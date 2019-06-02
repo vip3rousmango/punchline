@@ -12,7 +12,7 @@ Uses the [ICanHazDadJoke.com](https://icanhazdadjoke.com/) API &lt;3
 <!-- toc -->
 # Usage
 <!-- usage -->
-![](/docs/media/simple-example.gif)
+![](../docs/media/simple-example.gif)
 ```
 $ npm install -g @vip3rousmango/punchline
 $ punchline

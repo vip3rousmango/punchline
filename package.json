@@ -41,7 +41,7 @@
   },
   "repository": "vip3rousmango/punchline",
   "scripts": {
-    "posttest": "eslint .",
+    "lint": "eslint .",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\""
   }
 }
